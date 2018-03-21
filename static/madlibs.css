@@ -1,0 +1,23 @@
+body {
+    background-color: #BEBAED;
+}
+
+p {
+    font-size: 20px;
+    font-family: verdana;
+    margin: 50px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #302257;
+    text-align: center;
+}
+
+form {
+    margin: 50px;
+    margin-top: 20px;
+    font-family: verdana;
+    font-size: 20px;
+    line-height: 30px;
+}
