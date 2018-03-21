@@ -1,14 +1,9 @@
-<!doctype html>
-<html>
-<head>
-  <title>Game</title>
-  <link rel="stylesheet" href="/static/madlibs.css">
-</head>
-<body>
-
+{% extends 'base.html' %}
+{% block title %}Game{% endblock %}
+{% block content %}
 <h1>The Game is On!!</h1>
 <p>
-<form action="/madlib">
+<form action="/madlib" method="POST">
   Name a person: 
   <input type="text" name="person"><br>
   Pick a color:
@@ -32,6 +27,4 @@
   <input type="submit">
 </form>
 </p>
-
-</body>
-</html>
+{% endblock %}

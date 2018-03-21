@@ -1,18 +1,32 @@
-<!doctype html>
-<html>
-<head>
-  <title>A Compliment</title>
-  <link rel="stylesheet" href="/static/madlibs.css">
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}A Compliment{% endblock %}
+{% block content %}
     <p>
-    Hi {{ person }}! I think you're {{ compliment }}!
+    Hi {{ person }}! I think you're
+
+    {% if number == 1 %}
+        {{ compliments|join(" ") }}!
+    {% else %}
+        {% for i in range(number) %}
+            {% if i == number-1 %}
+                and {{ compliments[i] }}.
+            {% elif i == number - 2 %}
+                {{ compliments[i] }}
+            {% else %}
+                {{ compliments[i] }},
+            {% endif %}
+        {% endfor %}
+    {% endif %}
     <form action="/game">
         Would you like to play a game?
         <input type="radio" name="yesno" value="yes">Yes
         <input type="radio" name="yesno" value="no">No
+        <br>
+        Choose your form:
+        <input type="radio" name="getpost" value="get">GET
+        <input type="radio" name="getpost" value="post">POST
+        <br>
         <input type="submit">
     </form>
     </p>
-</body>
-</html>
+{% endblock %}

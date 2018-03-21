@@ -1,11 +1,6 @@
-<!doctype html>
-<html>
-<head>
-  <title>Hi There!</title>
-  <link rel="stylesheet" href="/static/madlibs.css">
-</head>
-<body>
-
+{% extends 'base.html' %}
+{% block title %}Hi There!{% endblock %}
+{% block content %}
 <h1>Hi There!</h1>
 <p>
 <form action="/greet">
@@ -13,5 +8,4 @@
   <input type="submit">
 </form>
 </p>
-</body>
-</html>
+{% endblock %}
